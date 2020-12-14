@@ -16,8 +16,8 @@ jobs:
         run: echo $JAVA_HOME
       - name: set java8 home
         run: |
-        export JAVA8_HOME=$JAVA_HOME && echo $JAVA8_HOME
-        echo "::set-env name=JAVA8_HOME::$JAVA_HOME"
+          export JAVA8_HOME=$JAVA_HOME && echo $JAVA8_HOME
+          echo "::set-env name=JAVA8_HOME::$JAVA_HOME"
       - name: echo java8 home 
         run:  echo $JAVA8_HOME
 
