@@ -17,9 +17,11 @@ jobs:
       - name: set java8 home
         run: |
           export JAVA8_HOME=$JAVA_HOME && echo $JAVA8_HOME
-          echo "::set-env name=JAVA8_HOME::$JAVA_HOME"
+          echo "export JAVA8_HOME=$JAVA_HOME" > ~/.testenv
       - name: echo java8 home 
-        run:  echo $JAVA8_HOME
+        run: |
+          source ~/.testenv
+          echo $JAVA8_HOME
 
       - uses: actions/checkout@v2
       - name: Set up JDK 1.8
