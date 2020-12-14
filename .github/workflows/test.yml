@@ -12,5 +12,11 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+      - name: echo java home
+        run: echo $JAVA_HOME
+      - name: set java8 home
+        run: export JAVA8_HOME=$JAVA_HOME
+      - name: echo java8 home 
+        run:  echo $JAVA8_HOME
       - name: Build with Maven
         run: mvn package -DskipTests && mvn test
